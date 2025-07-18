@@ -40,7 +40,14 @@ It sets up all essential tools system-wide — globally accessible by both root 
 ```bash
 git clone https://github.com/your-username/kali-recon-setup.git
 cd kali-recon-setup
+```
 
+2. **Make the script executable and run it**
+
+```bash
+chmod +x setup_recon_machine.sh
+./setup_recon_machine.sh
+```
 
 ## 📖 Read the Full Guide
 ➡️ Build the Ultimate Bug Bounty & Recon Machine on Kali (2025)
