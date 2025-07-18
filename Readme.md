@@ -66,6 +66,7 @@ Configure /opt/reconftw/reconftw.cfg if needed
 
 🧠 Author
 Rudra Potghan | Cybersecurity Enthusiast | Bug Bounty Hunter
+
 🔗 LinkedIn: [rudra-potghan](https://www.linkedin.com/in/rudra-potghan/)
 📜 Medium: [@rudrapotghan.07](https://medium.com/@rudrapotghan.07)
 
