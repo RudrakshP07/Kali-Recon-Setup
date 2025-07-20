@@ -64,11 +64,25 @@ else
 fi
 
 # ---- Install Shodan CLI ----
-echo "[*] Installing Shodan CLI..."
-pip install --upgrade shodan
-echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
-echo 'export PATH=$PATH:/root/.local/bin' | sudo tee -a /root/.bashrc
+echo "[*] Installing Shodan CLI via pipx..."
+
+# Install only if not already installed
+if ! command -v shodan &>/dev/null; then
+    pipx install shodan
+else
+    echo "[+] Shodan CLI already installed. Skipping."
+fi
+
+# Ensure PATH includes pipx binaries for current and root user
+if ! grep -q 'PATH=.*.local/bin' ~/.bashrc; then
+    echo 'export PATH=$PATH:~/.local/bin' >> ~/.bashrc
+fi
 export PATH=$PATH:~/.local/bin
+
+if ! sudo grep -q 'PATH=.*.local/bin' /root/.bashrc; then
+    echo 'export PATH=$PATH:/root/.local/bin' | sudo tee -a /root/.bashrc >/dev/null
+fi
+
 
 # ---- Install TruffleHog ----
 echo "[*] Installing TruffleHog with pipx..."
